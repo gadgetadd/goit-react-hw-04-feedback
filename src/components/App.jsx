@@ -21,7 +21,6 @@ export const App = () => {
       case 'bad':
         setBad(prev => prev + 1);
         break;
-
       default:
         throw new Error('unsupported type');
     }
@@ -39,7 +38,7 @@ export const App = () => {
     <>
       <Section title="Please leave feedback">
         <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
+          options={Object.keys({ good, neutral, bad })}
           onLeaveFeedback={feedbackHandler}
         />
       </Section>
